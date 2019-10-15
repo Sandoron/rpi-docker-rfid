@@ -16,15 +16,12 @@ COPY "./node-red-contrib-rfid/*" "./node-red-contrib-rfid/lib/*" /tmp/
 
 #update repo and install compiler
 RUN apt-get update  \
-    && apt-get install curl build-essential 
-
+    && apt-get install curl build-essential python-dev \
 #install node.js
-RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -  \
-    && apt-get install -y nodejs  
-
-#install node-red
-RUN npm install -g --unsafe-perm node-red 
-
+    && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -  \
+    && apt-get install -y nodejs  \
+#install Node-RED
+    && npm install -g --unsafe-perm node-red 
 #install open jdk 11 headless
 RUN apt-get install openjdk-11-jdk-headless 
 
