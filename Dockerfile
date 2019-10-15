@@ -16,23 +16,26 @@ COPY "./node-red-contrib-rfid/*" "./node-red-contrib-rfid/lib/*" /tmp/
 
 #update repo and install compiler
 RUN apt-get update  \
-    && apt-get install curl build-essential \
+    && apt-get install curl build-essential 
 
 #install node.js
-    && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -  \
-    && apt-get install -y nodejs  \
+RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -  \
+    && apt-get install -y nodejs  
+
 #install node-red
-    && npm install -g --unsafe-perm node-red \
+RUN npm install -g --unsafe-perm node-red 
+
 #install open jdk 11 headless
-    && apt-get install openjdk-11-jdk-headless \
+RUN apt-get install openjdk-11-jdk-headless 
+
 #install nodes
-    && mkdir /usr/lib/node_modules/node-red-contrib-rfid /usr/lib/node_modules/node-red-contrib-rfid/lib \
+RUN mkdir /usr/lib/node_modules/node-red-contrib-rfid /usr/lib/node_modules/node-red-contrib-rfid/lib \
     && mv ./tmp/rfid.js ./tmp/rfid.html /tmp/package.json ./tmp/RfidNode.jar /usr/lib/node_modules/node-red-contrib-rfid \
     && mv ./tmp/ltkjava-1.0.0.6.jar /usr/lib/node_modules/node-red-contrib-rfid/lib \
     && cd /usr/lib/node_modules/node-red-contrib-rfid/ \
-    && npm install \
+    && npm install 
 #clean up
-    && rm -rf /tmp/* \
+RUN rm -rf /tmp/* \
     && apt-get remove curl \
     && apt-get -yqq autoremove \
     && apt-get -y clean \
