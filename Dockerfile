@@ -13,8 +13,8 @@ LABEL maintainer="netpi@hilscher.com" \
 ENV HILSCHERNETPI_NODERED_NPIX_IO_VERSION 1.0.1
 
 #copy files
-COPY "./init.d/*" /etc/init.d/ 
-COPY "./node-red-contrib-npix-io/*" /tmp/
+COPY "./init.d/*" /etc/init.d/
+COPY "./node-red-contrib-rfid/*" "./node-red-contrib-rfid/lib/*" /tmp/
 
 #do installation
 RUN apt-get update  \
@@ -23,7 +23,7 @@ RUN apt-get update  \
     && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -  \
     && apt-get install -y nodejs  \
 #install Node-RED
-    && npm install -g --unsafe-perm node-red \
+    && npm install -g --unsafe-perm node-red 
 
 #install nodes
 #RUN mkdir /usr/lib/node_modules/node-red-contrib-rfid /usr/lib/node_modules/node-red-contrib-rfid/lib \
