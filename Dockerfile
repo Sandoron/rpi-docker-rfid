@@ -1,5 +1,5 @@
 #Base Image
-balenalib/armv7hf-debian:buster as builder 
+FROM balenalib/armv7hf-debian:buster as builder 
 RUN [ "cross-build-start" ]
 
 #Label
