@@ -26,17 +26,17 @@ RUN apt-get update  \
     && npm install -g --unsafe-perm node-red 
 
 #install nodes
-#RUN mkdir /usr/lib/node_modules/node-red-contrib-rfid /usr/lib/node_modules/node-red-contrib-rfid/lib \
-#    && mv ./tmp/rfid.js ./tmp/rfid.html /tmp/package.json ./tmp/RfidNode.jar /usr/lib/node_modules/node-red-contrib-rfid \
-#    && mv ./tmp/ltkjava-1.0.0.6.jar /usr/lib/node_modules/node-red-contrib-rfid/lib \
-#    && cd /usr/lib/node_modules/node-red-contrib-rfid/ \
-#    && npm install 
+RUN mkdir /usr/lib/node_modules/node-red-contrib-rfid /usr/lib/node_modules/node-red-contrib-rfid/lib \
+    && mv ./tmp/rfid.js ./tmp/rfid.html /tmp/package.json ./tmp/RfidNode.jar /usr/lib/node_modules/node-red-contrib-rfid \
+    && mv ./tmp/ltkjava-1.0.0.6.jar /usr/lib/node_modules/node-red-contrib-rfid/lib \
+    && cd /usr/lib/node_modules/node-red-contrib-rfid/ \
+    && npm install 
 #clean up
-#RUN rm -rf /tmp/* \
-#    && apt-get remove curl \
-#    && apt-get -yqq autoremove \
-#    && apt-get -y clean \
-#    && rm -rf /var/lib/apt/lists/*
+RUN rm -rf /tmp/* \
+    && apt-get remove curl \
+    && apt-get -yqq autoremove \
+    && apt-get -y clean \
+    && rm -rf /var/lib/apt/lists/*
 
 #set the entrypoint
 ENTRYPOINT ["/etc/init.d/entrypoint.sh"]
