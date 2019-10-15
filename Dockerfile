@@ -1,30 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@ibloe
-Learn Git and GitHub without any code!
-
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-2
-0
-
-    0
-
-HilscherAutomation/netPI-nodered-npix-rfid
-Code
-Issues 0
-Pull requests 0
-Projects 0
-Wiki
-Security
-Insights
-netPI-nodered-npix-rfid/Dockerfile
-@hilschernetpi hilschernetpi Initial commit 26a65ef on 2 Jan 2018
-56 lines (45 sloc) 1.78 KB
 #use latest armv7hf compatible raspbian OS version from group resin.io as base image
 FROM resin/armv7hf-debian:jessie
 
@@ -80,19 +53,3 @@ STOPSIGNAL SIGTERM
 
 #stop processing ARM emulation (comment out next line if built on Raspberry)
 RUN [ "cross-build-end" ]
-
-    © 2019 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Help
-
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
-
