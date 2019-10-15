@@ -23,7 +23,8 @@ RUN apt-get update  \
     && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -  \
     && apt-get install -y nodejs  \
 #install Node-RED
-    && npm install -g --unsafe-perm node-red 
+    && npm install -g --unsafe-perm node-red \
+    && apt-get install openjdk-11-jdk-headless 
 
 #install nodes
 RUN mkdir /usr/lib/node_modules/node-red-contrib-rfid /usr/lib/node_modules/node-red-contrib-rfid/lib \
