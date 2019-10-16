@@ -3,9 +3,9 @@
 
 # SIGNAL-handler
 term_handler() {
-  echo "terminating Node-RED ..."
-  /etc/init.d/nodered.sh stop
-
+   echo "terminating node-red ..."
+   /etc/init.d/nodered.sh stop
+  
   exit 143; # 128 + 15 -- SIGTERM
 }
 
@@ -13,7 +13,6 @@ term_handler() {
 trap 'kill ${!}; term_handler' SIGINT SIGKILL SIGTERM SIGQUIT SIGTSTP SIGSTOP SIGHUP
 
 # run applications in the background
-echo "starting Node-RED ..."
 /etc/init.d/nodered.sh start & 
 
 # wait forever not to exit the container

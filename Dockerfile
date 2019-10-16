@@ -4,13 +4,13 @@ FROM balenalib/armv7hf-debian:stretch
 #enable building ARM container on x86 machinery on the web (comment out next line if built on Raspberry) 
 RUN [ "cross-build-start" ]
 
-#labeling
-LABEL maintainer="netpi@hilscher.com" \ 
-      version="V1.0.1" \
-      description="Node-RED with dio nodes to communicate with NIOT-E-NPIX-4DI4DO extension module"
+#Label
+LABEL maintainer="ibloe" \ 
+      version="V0.0.1" \
+      description="Raspberry Pi Docker with node-red and RFID"
 
 #version
-ENV HILSCHERNETPI_NODERED_NPIX_IO_VERSION 1.0.1
+ENV PI_RFID 0.0.1
 
 #copy files
 COPY "./init.d/*" /etc/init.d/ 

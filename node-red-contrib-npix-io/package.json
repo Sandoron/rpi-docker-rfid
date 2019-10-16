@@ -1,0 +1,42 @@
+{
+  "name": "netPI-nodered-npix-io",
+  "version": "1.0.0",
+  "description": "Node-RED nodes to talk to NIOT-E-NPIX-4DI4DO module",
+  "dependencies": {
+    "rpi-gpio": "~0.9.0"
+  },
+  "main": "npixio.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node-red",
+    "npix",
+    "hilscher",
+    "netpi",
+    "io",
+    "input",
+    "output",
+    "digital"
+  
+  ],
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/Hilscher/netPI-nodered-npix-io"
+  },
+  "node-red": {
+    "nodes": {
+      "npix-io": "npixio.js"
+    }
+  },
+  "author": {
+    "name": "hilschernetpi",
+    "email": "netpi@hilscher.com",
+    "url": "https://github.com/Hilscher/netPI-nodered-npix-io"
+  },
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": ""
+  }
+}
