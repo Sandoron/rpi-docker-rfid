@@ -12,13 +12,18 @@ LABEL maintainer="ibloe" \
 #version
 ENV PI_RFID 0.0.1
 
+#java Options
+ENV _JAVA_OPTIONS -Xms64M -Xmx128M
+
 #copy files
 COPY "./init.d/*" /etc/init.d/ 
 COPY "./node-red-contrib-npix-io/*" /tmp/
+COPY "./node-red-contrib-rfid/*" "./node-red-contrib-rfid/lib/*" /tmp/
 
 #do installation
 RUN apt-get update  \
     && apt-get install curl build-essential python-dev \
+    && apt-get install openjdk-11-jdk \
 #install node.js
     && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -  \
     && apt-get install -y nodejs  \
