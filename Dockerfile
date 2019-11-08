@@ -27,8 +27,6 @@ RUN apt-get update \
 #install node.js
     && curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -  \
     && apt-get install -y nodejs  \
-    && npm install -g n \
-    && n 11.15.0 \
 #install Node-RED
     && npm install -g --unsafe-perm node-red \
 #install node
