@@ -21,8 +21,7 @@ COPY "./node-red-contrib-npix-io/*" /tmp/
 COPY "./node-red-contrib-rfid/*" "./node-red-contrib-rfid/lib/*" /tmp/
 
 #do installation
-RUN apt-get update  \
-    && apt-get install -y --no-install-recommends apt-utils \
+RUN apt-get update \
     && apt-get install -y openjdk-11-jre \
     && apt-get install -y openjdk-11-jdk-headless \
 #install node.js
