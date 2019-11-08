@@ -23,7 +23,7 @@ COPY "./node-red-contrib-rfid/*" "./node-red-contrib-rfid/lib/*" /tmp/
 #do installation
 RUN apt-get update  \
     && apt-get install curl build-essential python-dev \
-    && apt-get install openjdk-11-jdk \
+    && apt-get install openjdk-9-jdk \
 #install node.js
     && curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -  \
     && apt-get install -y nodejs  \
